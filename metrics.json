@@ -1,0 +1,10 @@
+{
+  "link_prediction": {
+    "auc": 0.6163313519280598,
+    "average_precision": 0.6505571773993295
+  },
+  "event_classification": {
+    "accuracy": 1.0,
+    "auc": 1.0
+  }
+}
