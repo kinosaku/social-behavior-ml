@@ -2,7 +2,7 @@
 
 给模型一棵转发树（repost tree），让它判断这次传播属于**正常事件**还是**突发事件**。
 
-[中文讲解 PDF](docs/weibo_cascade_guide.pdf) · [English guide](docs/weibo_cascade_guide_en.pdf) · [完整实验结果](results/weibo_cascades/metrics.json)
+[中文讲解 PDF](docs/weibo_cascade_guide.pdf) · [English guide](docs/weibo_cascade_guide_en.pdf) · [中文技术报告 PDF](docs/weibo_cascade_technical_report_zh.pdf) · [完整实验结果](results/weibo_cascades/metrics.json)
 
 ## 怎么判断
 
