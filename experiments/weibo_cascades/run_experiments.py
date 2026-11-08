@@ -1,4 +1,4 @@
-"""Reproduce both experiments using the provided train/val/test cascade files."""
+"""Train and evaluate event classifiers on propagation cascades."""
 import argparse
 import csv
 import json
@@ -24,7 +24,6 @@ import torch
 import torch_geometric
 
 from cascades import describe_structure, load_dataset, matrices
-from link_prediction import run_link_prediction
 from train_gnn import run_gin
 
 
@@ -84,7 +83,6 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--data-dir", type=Path, default=HERE / "data")
     parser.add_argument("--out", type=Path, default=HERE / "run")
-    parser.add_argument("--task", choices=("all", "event", "link"), default="all")
     parser.add_argument("--epochs", type=int, default=15)
     parser.add_argument("--batch-size", type=int, default=128)
     parser.add_argument("--threads", type=int, default=2)
@@ -107,10 +105,9 @@ def main():
         "data": metadata,
     }
     with threadpool_limits(limits=1):
-        if args.task in ("all", "event"):
-            results["event_classification"], results["training_structure"] = event_classification(datasets, args.out, args)
-        if args.task in ("all", "link"):
-            results["link_prediction"] = run_link_prediction(datasets, args.out, args.seed)
+        classification, structure = event_classification(datasets, args.out, args)
+    results["event_classification"] = classification
+    results["training_structure"] = structure
     path = args.out / "metrics.json"
     path.write_text(json.dumps(results, ensure_ascii=False, indent=2, allow_nan=False) + "\n", encoding="utf-8")
     print(f"Results: {path}", flush=True)
