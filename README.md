@@ -7,6 +7,7 @@
 本次使用 20,648 张微博式合成传播级联（synthetic cascades），完成图结构分析（graph structure analysis）、事件分类（event classification）和级联内转发来源预测（repost parent prediction）。模拟数据中的节点是帖子，边记录来源与转发的关系。类别和节点向量由模拟器生成。
 
 - [中文 PDF 讲解](docs/weibo_cascade_guide.pdf)
+- [English PDF guide](docs/weibo_cascade_guide_en.pdf)
 - [实验运行说明](experiments/weibo_cascades/README.md)
 - [完整评估结果](results/weibo_cascades/metrics.json)
 
