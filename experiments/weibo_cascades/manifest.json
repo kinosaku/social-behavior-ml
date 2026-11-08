@@ -1,0 +1,34 @@
+{
+  "IMPORTANT": "SYNTHETIC, NOT WEIBO DATA: unsuitable for claims about real-world performance",
+  "random_seed": 20261108,
+  "total_graphs": 20648,
+  "labels": {
+    "0": "SIMULATED normal cascade",
+    "1": "SIMULATED burst cascade"
+  },
+  "feature_dim": 32,
+  "fields": {
+    "x": "[num_nodes, 32] torch.float32 synthetic numeric vectors, NOT real text embeddings",
+    "edge_index": "[2, num_edges] torch.int64 directed parent->repost edges",
+    "label": "[1] torch.int64 whole-graph class"
+  },
+  "graph_construction": "single-root directed tree; label-dependent overlapping root attachment, popularity and recency distributions",
+  "node_count": "same lognormal distribution for both labels",
+  "splits": {
+    "train": {
+      "graphs": 14453,
+      "normal": 9633,
+      "burst": 4820
+    },
+    "val": {
+      "graphs": 3097,
+      "normal": 2064,
+      "burst": 1033
+    },
+    "test": {
+      "graphs": 3098,
+      "normal": 2065,
+      "burst": 1033
+    }
+  }
+}

@@ -18,3 +18,7 @@ u019,u027,2026-01-04 12:08:00,e01,comment
 - `event_id`：所属事件，可选。
 - `action`：互动类型，如 retweet/comment/mention，可选。
 
+
+## 传播级联实验数据
+
+20,648 张模拟传播树（synthetic propagation trees）的生成脚本和字段说明在 [级联实验目录](../experiments/weibo_cascades/README.md)。上面的用户边列表适用于原有用户互动演示，传播级联实验读取 PyTorch 的 `.pt` 文件。

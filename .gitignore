@@ -13,3 +13,6 @@ env/
 build/
 dist/
 *.egg-info/
+
+/experiments/weibo_cascades/data/
+/experiments/weibo_cascades/run/
